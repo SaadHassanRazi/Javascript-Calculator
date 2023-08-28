@@ -1,0 +1,14 @@
+.med{
+    width: 40%;
+}
+
+@media screen and (max-width:1024px) {
+    .med{
+        width: 100%;
+    }
+    
+}
+
+.btn {
+    width: 100%;
+}
