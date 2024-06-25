@@ -3,93 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="bg-dark">
     <section class="container">
         <p class="display-5 text-white text-center">Calculator</p>
-    <section class="mx-auto border my-5 rounded med">
-        <div class="mb-3 mx-2">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="text" class="form-control form-control-lg bg-secondary text-white" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
-          </div>
-
-        <div class="row  mx-auto my-2">
-            <div class="col-2 text-center mx-auto">
-               <button class="btn btn-secondary" onclick="num_7()" type="button" id="num_7">7</button>
+        <section class="mx-auto border my-5 rounded med">
+            <div class="mb-3 mx-2">
+                <input type="text" class="form-control form-control-lg bg-secondary text-white" id="exampleInputEmail1" readonly>
             </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" onclick="num_8()"  type="button" id="num_8">8</button>
+            <div class="row mx-auto my-2">
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('7')" type="button">7</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('8')" type="button">8</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('9')" type="button">9</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="del()" type="button">del</button>
+                </div>
             </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary"onclick="num_9()"  type="btn" id="num_9">9</button>
+            <div class="row mx-auto my-2">
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('4')" type="button">4</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('5')" type="button">5</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('6')" type="button">6</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="operator('+')" type="button">+</button>
+                </div>
             </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-primary" onclick="del()" type="btn" id="del">del</button>
+            <div class="row mx-auto my-2">
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('1')" type="button">1</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('2')" type="button">2</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('3')" type="button">3</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="operator('-')" type="button">-</button>
+                </div>
             </div>
-            
-        </div>
-        
-        <div class="row  mx-auto my-2">
-            <div class="col-2 text-center mx-auto">
-               <button class="btn btn-secondary"onclick="num_4()"  type="button" id="num_4">4</button>
+            <div class="row mx-auto my-2">
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="dot()" type="button">.</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-secondary" onclick="num('0')" type="button">0</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="operator('/')" type="button">/</button>
+                </div>
+                <div class="col-3 text-center mx-auto">
+                    <button class="btn btn-primary" onclick="operator('*')" type="button">*</button>
+                </div>
             </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" type="button" onclick="num_5()"  id="num_5">5</button>
+            <div class="row mx-auto my-2">
+                <div class="col text-center mx-auto">
+                    <button class="btn btn-danger w-75" onclick="reset()" type="button">Reset</button>
+                </div>
+                <div class="col text-center mx-auto">
+                    <button class="btn btn-success w-75" onclick="answer()" type="button">=</button>
+                </div>
             </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" type="btn"onclick="num_6()"  id="num_6">6</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-primary" type="btn" onclick="plus()" id="plus">+</button>
-            </div>
-        </div>
-        
-        <div class="row  mx-auto my-2">
-            <div class="col-2 text-center mx-auto">
-               <button class="btn btn-secondary" onclick="num_1()"  type="button" id="num-1">1</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" type="button" onclick="num_2()"  id="num_2">2</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" type="btn"onclick="num_3()"  id="num_3">3</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-primary" onclick="subtract()" type="btn" id="subtract">-</button>
-            </div>
-        </div>
-        
-        <div class="row  mx-auto my-2">
-            <div class="col-2 text-center mx-auto">
-               <button class="btn btn-primary" onclick="dot()" type="button">.</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-secondary" id="num_0" onclick="num_0()" type="button">0</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-primary" onclick="divide()" type="btn">/</button>
-            </div>
-            <div class="col-2 text-center mx-auto">
-                <button class="btn btn-primary" onclick="multiply()" type="btn" id="multiply">*</button>
-            </div>
-        </div>
-        <div class="row  mx-auto my-2">
-            <div class="col  text-center mx-auto">
-               <button class="btn btn-danger w-75" onclick="reset()" type="button">Reset</button>
-            </div>
-            <div class="col text-center mx-auto">
-                <button class="btn btn-success w-75" onclick="answer()" type="button">=</button>
-            </div>
-            
-        </div>
-    </section>
-</section>  
-    <script src="/js/index.js">
-
-    </script>
+        </section>
+    </section>  
+    <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
